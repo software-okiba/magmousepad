@@ -87,7 +87,7 @@ img.top_icon  {
 		border-bottom: 1px solid #999;
 	}
 .acname_td{
-	width: 12em;
+	/*width: 12em;*/
 	text-align: center;
 	padding: 0 1em;
 	border-right: 1px solid #ccc;
