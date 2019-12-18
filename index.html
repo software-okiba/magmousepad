@@ -54,7 +54,8 @@
 										</p>
 									</div>
 								</div>
-								<a id="js_download_link" href="#" class="button">Download</a>
+								<a id="js_download_link" href="#" class="button">Download<span style="font-size:0.8em;">(Windows 64bit)</span></a><br />
+								<a id="js_download_link_x86" style="color:#000;font-weight: bold;" href="#" class="">Download<span style="font-size:0.8em;">(Windows 32bit)</span></a>
 
 							</header>
 								<p>お使いのAndroid端末をPCのトラックパッドとして利用できます。</p>
@@ -79,7 +80,6 @@
 										<span class="icon fa-windows"></span>
 									</td>
 									<td class="desc_td">
-										Java SE 7以降がインストールされている<br />
 										Windows 7 32bit / 64bit 以降
 									</td>
 								</tr>
@@ -87,10 +87,6 @@
 							
 							<p  class="color_important">WiFi環境が必要です。Android端末とPCが同じLAN内で通信ができる必要があります。</p>
 							
-							<p>Java SE 7以降がインストールされていない場合は下記のリンクからインストールできます。
-							<br />
-							<a href="https://www.java.com/ja/">https://www.java.com/ja/</a>
-							</p>
 							
 						</div>
 					</section>
@@ -195,6 +191,7 @@
 						success: function(json){
 							$('#js_ver_name').html(json.name);
 							$('#js_download_link').attr('href','app/'+json.file);
+							$('#js_download_link_x86').attr('href','app/'+json.file_x86);
 						}
 					});
 				});
