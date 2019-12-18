@@ -114,6 +114,13 @@ img.top_icon  {
 			width:90px;
 			display: inline;
 		}
+		input[type="button"],
+		input[type="submit"],
+		input[type="reset"],
+		button,
+		.button {
+			padding: 0.75em 0.8em 0.75em 0.8em;
+		}
 	}
 	@media screen and (max-width: 610px) {
 			.top_icon_row{
