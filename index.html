@@ -55,7 +55,24 @@
 									</div>
 								</div>
 								<a id="js_download_link" href="#" class="button">Download<span style="font-size:0.8em;">(Windows 64bit)</span></a><br />
-								<a id="js_download_link_x86" style="color:#000;font-weight: bold;" href="#" class="">Download<span style="font-size:0.8em;">(Windows 32bit)</span></a>
+								<a id="js_download_link_x86" style="color:#000;font-weight: bold;" href="#" class="">Download<span style="font-size:0.8em;">(Windows 32bit)</span></a><br />
+								<a class="js_open_oher" href="#">その他のプラットフォーム<span class="js_other_icon"><i class="icon fa-angle-down"></i></span></a>
+								<div class="js_other_area" style="display:none;" >
+									<hr />
+									<p>
+									以下からダウンロードできるjarファイルを実行することでWindows以外(Mac、Linux)でも利用できます<br />
+									※Java SE 7以降がインストールされている場合があります<br />
+									<a href="https://www.java.com/ja/">https://www.java.com/ja/</a>
+
+									</p>
+									<table style="border: 1px solid #999;">
+										<tr>
+											<th style="color:#000;font-weight: bold;">Mac、Linux</th>
+											<td><a id="js_download_link_jar" href="#"  style="color:#000;font-weight: bold;">Download(jar)</a></td>
+										</tr>
+									</table>
+									<hr />
+								</div>
 
 							</header>
 								<p>お使いのAndroid端末をPCのトラックパッドとして利用できます。</p>
@@ -84,7 +101,9 @@
 									</td>
 								</tr>
 							</table>
-							
+							<p>
+							Java SE 7以降がインストールされていればjarファイルを実行することでWindows以外(Mac、Linux)でも利用できます
+							</p>
 							<p  class="color_important">WiFi環境が必要です。Android端末とPCが同じLAN内で通信ができる必要があります。</p>
 							
 							
@@ -193,8 +212,23 @@
 							$('#js_ver_name').html(json.name);
 							$('#js_download_link').attr('href','app/'+json.file);
 							$('#js_download_link_x86').attr('href','app/'+json.file_x86);
+							$('#js_download_link_jar').attr('href','app/'+json.file_jar);
 						}
 					});
+					var isOpen = false;
+					$(document).
+					on("click",".js_open_oher",function(){
+						isOpen = !isOpen;
+						if(isOpen){
+							$(".js_other_icon").empty().append('<i class="icon fa-angle-up"></i>');
+							$(".js_other_area").show();
+						}else{
+							$(".js_other_icon").empty().append('<i class="icon fa-angle-down"></i>');
+							$(".js_other_area").hide();
+						}
+						return false;
+					})
+					;
 				});
 			</script>
 	</body>
